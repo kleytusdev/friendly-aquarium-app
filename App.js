@@ -1,42 +1,25 @@
-import * as Font from "expo-font";
-import * as SplashScreen from 'expo-splash-screen';
-import { Text, View } from "react-native";
-import { useEffect, useCallback } from "react";
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { useFonts } from "./src/utilities/useFonts";
+import AuthNavigator from './src/navigations/AuthNavigator';
+import { View, Text } from 'react-native';
+
 
 export default function App() {
-  const [fontsLoaded] = Font.useFonts({
-    "Inter-Black": require("./assets/fonts/Inter-Black.otf"),
-    "Inter-SemiBoldItalic":
-      "https://rsms.me/inter/font-files/Inter-SemiBoldItalic.otf?v=3.12",
-  });
 
-  useEffect(() => {
-    async function prepare() {
-      await SplashScreen.preventAutoHideAsync();
-    }
-
-    prepare();
-  }, []);
-
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
+  const { onLayoutRootView, fontsLoaded } = useFonts();
 
   if (!fontsLoaded) {
-    return null;
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text style={{ fontSize: 32 }}>Cargando...</Text>
+      </View>
+    );
   }
 
   return (
-    <View 
-      style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-      onLayout={onLayoutRootView}>
-      <Text>Platform Default</Text>
-      <Text style={{ fontFamily: "Inter-Black" }}>Inter Black</Text>
-      <Text style={{ fontFamily: "Inter-SemiBoldItalic" }}>
-        Inter SemiBoldItalic
-      </Text>
-    </View>
+    <NavigationContainer>
+      <AuthNavigator/>
+    </NavigationContainer>
   );
 }

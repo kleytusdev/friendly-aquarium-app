@@ -1,6 +1,33 @@
 {
   "expo": {
     "name": "FriendlyAquarium",
-    "slug": "FriendlyAquarium"
+    "slug": "FriendlyAquarium",
+    "ios": {
+      "supportsTablet": true
+    },
+  
+    "android": {
+      "package": "com.kleytus.FriendlyAquarium",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/betta-fish.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
   }
 }
