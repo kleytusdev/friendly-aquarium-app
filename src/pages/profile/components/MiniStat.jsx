@@ -2,10 +2,12 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { COLORS } from "../../../constants";
 
-const MiniStat = ({ name }) => {
+const MiniStat = ({ name, backgroundColor, styleText }) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{name}</Text>
+    <View style={{flexDirection: 'row'}}>
+      <View style={styles.container} backgroundColor={backgroundColor}>
+        <Text style={[styles.text, styleText]}>{name}</Text>
+      </View>
     </View>
   );
 };
@@ -14,16 +16,13 @@ export default MiniStat;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.lightSkyBlue,
     borderRadius: 10,
     paddingHorizontal: 7,
-    maxWidth: 65
+    paddingVertical: 1
   },
   text: {
     fontFamily: "Poppins-SemiBold",
-    color: COLORS.primary,
-    fontSize: 10,
-    textAlign: "center",
+    fontSize: 8,
     justifyContent: "center",
   },
 });

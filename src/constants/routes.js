@@ -5,14 +5,14 @@ export default {
     REGISTER: 'Register',
 
     HOME: 'Home',
-    CATEGORY: 'Category',
-    PRODUCTS: 'Products',
+    FAVORITE: 'Favorite',
+    SHOPPING: 'Shopping',
     PROFILE: 'Profile',
     
 
-    HOME_TAB: 'Home',
-    CATEGORY_TAB: 'Category',
-    PRODUCT_TAB: 'Product',
+    HOME_TAB: 'HomePrincipal',
+    FAVORITE_TAB: 'Favorite',
+    SHOPPING_TAB: 'Shopping',
     PROFILE_TAB: 'Profile',
 
 };

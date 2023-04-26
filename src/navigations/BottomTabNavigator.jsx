@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ROUTES, COLORS } from '../constants';
+import { Ionicons } from '@expo/vector-icons';
 import Home from '../pages/home/Home'
-import Category from '../pages/category/Category'
+import Favorites from '../pages/favorite/Favorite';
 import Shopping from '../pages/shopping/Shopping';
 import Profile from '../pages/profile/Profile'
-import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,19 +22,20 @@ const BottomTabNavigator = () => {
           let iconName;
           if (route.name === ROUTES.HOME_TAB){
             iconName = focused ? "home" : 'home-outline';
-          } else if (route.name === ROUTES.CATEGORY_TAB){
-            iconName = focused ? "home" : 'home-outline';
-          } else if (route.name === ROUTES.PRODUCT_TAB){
-            iconName = focused ? "home" : 'home-outline';
+          } else if (route.name === ROUTES.FAVORITE_TAB){
+            iconName = focused ? "heart" : 'heart-outline';
+          } else if (route.name === ROUTES.SHOPPING_TAB){
+            iconName = focused ? "cart" : 'cart-outline';
           } else if (route.name === ROUTES.PROFILE_TAB){
-            iconName = focused ? "home" : 'home-outline';
+            iconName = focused ? "person" : 'person-outline';
           }
           return <Ionicons name={iconName} size={20} color={color} /> 
         }
-      })}>
+      })}
+    >
       <Tab.Screen name={ROUTES.HOME_TAB} component={Home}/>
-      <Tab.Screen name={ROUTES.CATEGORY_TAB} component={Category} />
-      <Tab.Screen name={ROUTES.PRODUCT_TAB} component={Shopping} />
+      <Tab.Screen name={ROUTES.FAVORITE_TAB} component={Favorites} />
+      <Tab.Screen name={ROUTES.SHOPPING_TAB} component={Shopping} />
       <Tab.Screen name={ROUTES.PROFILE_TAB} component={Profile} />
     </Tab.Navigator>
   );
