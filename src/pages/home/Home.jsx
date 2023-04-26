@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
   },
   containerSubTitle: {
-    marginTop: 30,
+    marginTop: 10,
   },
   greeting: {
     fontFamily: 'Poppins-Medium',

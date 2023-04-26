@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ROUTES, COLORS } from '../constants';
 import Home from '../pages/home/Home'
 import Category from '../pages/category/Category'
-import Product from '../pages/product/Product'
+import Shopping from '../pages/shopping/Shopping';
 import Profile from '../pages/profile/Profile'
 import { Ionicons } from '@expo/vector-icons';
 
@@ -34,7 +34,7 @@ const BottomTabNavigator = () => {
       })}>
       <Tab.Screen name={ROUTES.HOME_TAB} component={Home}/>
       <Tab.Screen name={ROUTES.CATEGORY_TAB} component={Category} />
-      <Tab.Screen name={ROUTES.PRODUCT_TAB} component={Product} />
+      <Tab.Screen name={ROUTES.PRODUCT_TAB} component={Shopping} />
       <Tab.Screen name={ROUTES.PROFILE_TAB} component={Profile} />
     </Tab.Navigator>
   );
