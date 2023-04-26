@@ -19,7 +19,7 @@ const Profile = () => {
           <Text style={styles.name}>Aldo</Text>
           <View style={styles.locationContainer}>
             <Text style={styles.location}>Lima, Perú</Text>
-            <MiniStat name={'PRO'}/>
+            <MiniStat name={"PRO"} backgroundColor={COLORS.lightSkyBlue} styleText={{color: COLORS.primary}} />
           </View>
         </View>
         <Ionicons
