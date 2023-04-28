@@ -1,24 +1,45 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { ROUTES, COLORS } from '../../constants';
+import { StyleSheet, Text, View } from 'react-native'
+import { COLORS } from '../../constants';
+import { SafeAreaView } from "react-native-safe-area-context";
 import Slider from './components/Slider';
+import CardExplore from './components/CardExplore';
 
-const Favorites = () => {
+const Favorite = () => {
   return (
-    <View style={ styles.body }>
-      <Text>Favorites</Text>
+    <SafeAreaView style={ styles.body }>
+      <View style={ styles.header }>
+        <Text style={ styles.title }>Explora tu</Text>
+        <Text style={ styles.title }>Historial de Pedidos</Text>
+        <Text style={ styles.subtitle }>Tus pedidos en un solo lugar</Text>
+      </View>
       <Slider/>
-    </View>
+      <CardExplore />
+    </SafeAreaView>
   )
 }
 
-export default Favorites
+export default Favorite
 
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: COLORS.white,
     flex:1,
-    justifyContent:'center', 
-    alignItems:'center'
+    backgroundColor: COLORS.white,
+  },
+  header: {
+    marginVertical: 30,
+    paddingHorizontal: 20
+
+  },
+  title: {
+    lineHeight: 35,
+    fontSize: 30,
+    fontFamily: 'Poppins-SemiBold'
+  },
+  subtitle: {
+    color: COLORS.gray,
+    fontSize: 15,
+    fontFamily: 'Poppins-Regular',
+    marginVertical: 5
   }
 })

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
@@ -10,41 +10,43 @@ import CreditCard from "./components/CreditCard";
 const Profile = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Image
-          style={styles.avatar}
-          source={require("../../assets/img/profile.jpg")}
-        />
-        <View style={styles.headerInfo}>
-          <Text style={styles.name}>Aldo</Text>
-          <View style={styles.locationContainer}>
-            <Text style={styles.location}>Lima, Perú</Text>
-            <MiniStat name={"PRO"} backgroundColor={COLORS.lightSkyBlue} styleText={{color: COLORS.primary}} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.header}>
+          <Image
+            style={styles.avatar}
+            source={require("../../assets/img/profile.jpg")}
+          />
+          <View style={styles.headerInfo}>
+            <Text style={styles.name}>Aldo</Text>
+            <View style={styles.locationContainer}>
+              <Text style={styles.location}>Lima, Perú</Text>
+              <MiniStat name={"PRO"} backgroundColor={COLORS.lightSkyBlue} styleText={{color: COLORS.primary}} />
+            </View>
+          </View>
+          <Ionicons
+            style={styles.icon}
+            name="settings"
+            size={20}
+            color={COLORS.primary}
+          />
+        </View>
+        <View style={styles.stats}>
+          <View style={styles.stat}>
+            <Text style={styles.statValue}>30</Text>
+            <Text style={styles.statLabel}>Compras</Text>
+          </View>
+          <View style={styles.stat}>
+            <Text style={styles.statValue}>7</Text>
+            <Text style={styles.statLabel}>Pedidos</Text>
+          </View>
+          <View style={styles.stat}>
+            <Text style={styles.statValue}>110</Text>
+            <Text style={styles.statLabel}>Favoritos</Text>
           </View>
         </View>
-        <Ionicons
-          style={styles.icon}
-          name="settings"
-          size={20}
-          color={COLORS.primary}
-        />
-      </View>
-      <View style={styles.stats}>
-        <View style={styles.stat}>
-          <Text style={styles.statValue}>30</Text>
-          <Text style={styles.statLabel}>Compras</Text>
-        </View>
-        <View style={styles.stat}>
-          <Text style={styles.statValue}>7</Text>
-          <Text style={styles.statLabel}>Pedidos</Text>
-        </View>
-        <View style={styles.stat}>
-          <Text style={styles.statValue}>110</Text>
-          <Text style={styles.statLabel}>Favoritos</Text>
-        </View>
-      </View>
-      <CardNotification />
-      <CreditCard />
+        <CardNotification />
+        <CreditCard />
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -2,7 +2,7 @@ export default {
     gradientForm: '#A376F1',
     primary: '#211E2F',
     primaryStrong: '#15131E',
-    primaryLight: '#282631',
+    primaryLight: '#3B3947',
     white: '#FFFFFF',
     lightSkyBlue: '#91F4DF',
     dark: '#444',
