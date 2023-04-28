@@ -5,11 +5,13 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  Image
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../../constants";
 import { Ionicons } from "@expo/vector-icons";
 import CategoryNavigator from "./navigations/CategoryNavigator";
+import WelcomeBetta from "../../assets/pngs/welcome-betta.png"
 
 const Navbar = () => {
   return (
@@ -53,7 +55,10 @@ const Navbar = () => {
         </View>
         <View style={styles.column2}>
           <View style={styles.image}>
-            <Ionicons name="options" size={20} color={COLORS.white} />
+            <Image
+              style={{ width: 100, height: 100 }}
+              source={require("../../assets/pngs/welcome-betta.png")}
+            />
           </View>
         </View>
       </View>
@@ -88,7 +93,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
   },
   containerSubTitle: {
-    marginTop: 30,
+    marginTop: 10,
   },
   greeting: {
     fontFamily: 'Poppins-Medium',
@@ -146,7 +151,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     backgroundColor: COLORS.primary,
-    marginLeft: 20,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -163,7 +167,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   button: {
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.lightSkyBlue,
     marginVertical: 10,
     width: 90,
     height: 23,

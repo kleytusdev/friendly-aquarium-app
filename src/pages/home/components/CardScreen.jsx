@@ -1,13 +1,22 @@
-import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { COLORS } from '../../../constants'
+import MiniStat from '../../profile/components/MiniStat'
 
-const { width, height } = Dimensions.get('window')
+const CardScreen = ({ sourceImage, name, price, top, imageWidth, imageHeight, backgroundColorState, nameState }) => {
 
-const CardScreen = () => {
   return (
     <>
-      <View style={[styles.card, {padding: width * 0.21}]}></View>
+      <View style={styles.card}>
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
+          <Image style={[styles.image, { top: top, width: imageWidth, height: imageHeight }]} source={sourceImage}/>
+        </View>
+          <MiniStat styleText={{ fontSize: 10 }} backgroundColor={backgroundColorState} name={nameState}/>
+        <View style={[styles.textContainer, {flex: 1, alignItems: 'center', justifyContent: 'flex-end' }]}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.price}>S/ {price}</Text>
+        </View>
+      </View>
     </>
   )
 }
@@ -15,10 +24,30 @@ const CardScreen = () => {
 export default CardScreen
 
 const styles = StyleSheet.create({
-
   card: {
+    flex: 0.5,
+    height: 200,
     backgroundColor: COLORS.primary,
     borderRadius: 26,
-    marginTop: 10
+    marginHorizontal: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  image:{
+    position: 'absolute',
+  },
+  textContainer: {
+    marginBottom: 30,
+    gap: 5
+  },
+  name: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 17,
+    color: COLORS.white,
+  },
+  price:{
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 14,
+    color: COLORS.white
   }
 })

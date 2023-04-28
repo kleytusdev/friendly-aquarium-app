@@ -6,8 +6,26 @@ import { COLORS } from "../../../constants";
 const AccesoryScreen = () => {
   return (
     <View style={styles.body}>
-      <CardScreen />
-      <CardScreen />
+      <CardScreen
+        imageWidth={130}
+        imageHeight={130}
+        top={-60}
+        sourceImage={require('../../../assets/pngs/filtro.png')}
+        name={'Coral'}
+        price={'75'}
+        backgroundColorState={COLORS.lightSkyBlue}
+        nameState={'Descuento 5%'}
+      />
+      <CardScreen 
+        imageWidth={110}
+        imageHeight={110}
+        top={-55}
+        sourceImage={require('../../../assets/pngs/coral1.png')}
+        name={'Coral'}
+        price={'140'}
+        backgroundColorState={COLORS.lightSkyBlue}
+        nameState={'Descuento 10%'}
+      />
     </View>
   );
 };
