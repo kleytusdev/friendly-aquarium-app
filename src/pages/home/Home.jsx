@@ -5,15 +5,15 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  Image
+  Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../../constants";
 import { Ionicons } from "@expo/vector-icons";
 import CategoryNavigator from "./navigations/CategoryNavigator";
-import WelcomeBetta from "../../assets/pngs/welcome-betta.png"
 
 const Navbar = () => {
+
   return (
     <SafeAreaView style={styles.body}>
       <View style={styles.navbar}>

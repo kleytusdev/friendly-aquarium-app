@@ -9,7 +9,7 @@ const CreditCard = () => {
         <Text style={styles.title}>Credit Card</Text>
         <Text style={styles.numberCard}>**** ******** 12345</Text>
         <View style={styles.row}>
-          <Text style={styles.nameHolder}>Aldo de la Cruz</Text>
+          <Text style={styles.nameHolder}>Aldo de la Cruz Gallegos</Text>
           <Image
             source={require("../../../assets/img/mastercard.png")}
             style={{ width: 45, height: 45 }}

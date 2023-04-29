@@ -7,14 +7,14 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { ROUTES, COLORS } from "../../../constants";
 
-const Button = ({ name, backgroundColor, borderWidth, borderColor, textColor }) => {
+const Button = ({ onPress, name, backgroundColor, borderWidth, borderColor, textColor }) => {
   
   const navigation = useNavigation();
 
   return (
     <Pressable
       style={[styles.button, { backgroundColor, borderWidth, borderColor }]}
-      onPress={() => navigation.navigate(ROUTES.HOME)}
+      onPress={onPress}
     >
       <Text style={[styles.buttonTextLogin, { color: textColor }]}>
         {name}

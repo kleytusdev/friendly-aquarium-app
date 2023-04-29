@@ -6,11 +6,9 @@ import {
 } from "react-native";
 import { COLORS } from "../../../constants";
 
-const Input = ({ placeholder }) => {
-
-
+const Input = ({ placeholder, onChangeText }) => {
   return (
-    <TextInput style={styles.input} placeholder={placeholder} />
+    <TextInput onChangeText={onChangeText} style={styles.input} placeholder={placeholder} />
   );
 };
 

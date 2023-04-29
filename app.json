@@ -19,9 +19,8 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/betta-fish.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/splash-fa.png",
+      "resizeMode": "cover"
     },
     "assetBundlePatterns": [
       "**/*"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   StyleSheet,
@@ -6,30 +6,69 @@ import {
   TextInput,
   Pressable,
   View,
+  Alert
 } from "react-native";
 import Facebook from "../../assets/img/facebook.png";
 import Google from "../../assets/img/google.png";
 import { useNavigation } from '@react-navigation/native';
 import { ROUTES, COLORS } from "../../constants";
-import  Button  from "./components/Button";
-import  Input  from "./components/Input";
+import Button from "./components/Button";
+import Input from "./components/Input";
+import firebaseConfig from "./../../../firebase-config";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { initializeApp } from 'firebase/app';
 
 const Login = () => {
-
   const navigation = useNavigation();
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  console.log({ email, password })
+  
+  const handleCreateAccount = () => {
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      console.log('Cuenta creada');
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch(error => {
+      console.log(error);
+      Alert.alert(error.message)
+    })
+  }
+
+  const handleSignIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      console.log('Inicio de sesión exitoso');
+      const user = userCredential.user;
+      console.log(user);
+      navigation.navigate('Home')
+    })
+    .catch(error => {
+      console.log(error);
+      Alert.alert(error.message)
+    })
+  }
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Inicia Sesión</Text>
       <View style={styles.inputContainer}>
-        <Input placeholder={'E-mail'} />
-        <Input placeholder={'Contraseña'} />
+        <Input onChangeText={(text) => setEmail(text)} placeholder={'E-mail'} />
+        <Input onChangeText={(text) => setPassword(text)} placeholder={'Contraseña'} />
       </View>
       
       <Button
         name="Ingresa"
         backgroundColor={COLORS.primary}
         textColor={COLORS.white}
+        onPress={handleSignIn}
       />
       <Button
         name="Regístrate"
@@ -37,6 +76,7 @@ const Login = () => {
         borderColor={COLORS.grayLight}
         backgroundColor={COLORS.white}
         textColor={COLORS.gray}
+        onPress={handleCreateAccount}
       />
 
       <View style={styles.question}>

@@ -20,9 +20,9 @@ const AccesoryScreen = () => {
         imageWidth={110}
         imageHeight={110}
         top={-55}
-        sourceImage={require('../../../assets/pngs/coral1.png')}
-        name={'Coral'}
-        price={'140'}
+        sourceImage={require('../../../assets/pngs/adorno.png')}
+        name={'Adorno cueva'}
+        price={'45'}
         backgroundColorState={COLORS.lightSkyBlue}
         nameState={'Descuento 10%'}
       />

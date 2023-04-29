@@ -6,8 +6,31 @@ import { COLORS } from "../../constants";
 import CardNotification from "./components/CardNotification";
 import MiniStat from "./components/MiniStat";
 import CreditCard from "./components/CreditCard";
+import IconLogout from './../../assets/icons/logout.png';
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from '@react-navigation/native';
+import { initializeApp } from 'firebase/app';
+import { getAuth, signOut } from 'firebase/auth';
+import firebaseConfig from "./../../../firebase-config";
 
 const Profile = () => {
+
+  const navigation = useNavigation();
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log('Sesión cerrada');
+        navigation.navigate('Login')
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -23,12 +46,9 @@ const Profile = () => {
               <MiniStat name={"PRO"} backgroundColor={COLORS.lightSkyBlue} styleText={{color: COLORS.primary}} />
             </View>
           </View>
-          <Ionicons
-            style={styles.icon}
-            name="settings"
-            size={20}
-            color={COLORS.primary}
-          />
+          <TouchableOpacity onPress={handleSignOut}>
+            <Image style={{ width: 25, height: 25, marginRight: 20 }} source={IconLogout}/>
+          </TouchableOpacity>
         </View>
         <View style={styles.stats}>
           <View style={styles.stat}>
@@ -56,30 +76,35 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.white,
     paddingHorizontal: 20,
+    marginTop: 15
   },
   header: {
+    backgroundColor: COLORS.primary,
     flexDirection: "row",
     alignItems: "center",
-    marginVertical: 20,
-    marginLeft: 15
+    marginTop: 20,
+    paddingVertical: 25,
+    paddingHorizontal: 10,
+    borderRadius: 20,
   },
   avatar: {
     width: 70,
     height: 70,
     borderRadius: 35,
     marginRight: 20,
+    marginLeft: 15,
   },
   headerInfo: {
     flex: 1,
   },
   name: {
     fontFamily: 'Poppins-SemiBold',
-    color: COLORS.primary,
+    color: COLORS.white,
     fontSize: 20,
   },
   location: {
     fontFamily: "Poppins-Regular",
-    color: COLORS.gray,
+    color: COLORS.extraGray,
     marginRight: 10
   },
   icon: {

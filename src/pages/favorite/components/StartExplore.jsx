@@ -2,12 +2,15 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { COLORS } from "../../../constants";
 import { Ionicons } from "@expo/vector-icons";
+import IconBetta from "../../../assets/svgs/betta-fish.svg"
 
 const StartExplore = () => {
   return (
     <TouchableOpacity>
       <View style={styles.button}>
-        <View style={styles.circle} />
+        <View style={styles.circle}>
+          <IconBetta fill='#3B3947' width={35} height={35} />
+        </View>
         <Text style={styles.buttonText}>Únete ahora</Text>
         <Ionicons
           name="arrow-forward-sharp"
@@ -34,8 +37,8 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   circle: {
-    padding: 20,
-    borderRadius: 20,
+    padding: 10,
+    borderRadius: 70,
     backgroundColor: "white",
   },
   square: {

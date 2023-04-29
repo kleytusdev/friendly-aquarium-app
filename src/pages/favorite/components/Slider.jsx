@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -13,9 +13,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../../../constants";
 
 const imagenes = [
-  "https://i.imgur.com/JOKsNeT.jpeg",
-  "https://i.imgur.com/pN14qda.jpeg",
-  "https://i.imgur.com/diRjABu.jpeg",
+  "https://cdn.discordapp.com/attachments/920362745231192114/1101306081218670662/pexels-francesco-ungaro-3301910.jpg",
+  "https://cdn.discordapp.com/attachments/920362745231192114/1101306081734557746/pexels-ivan-babydov-7787761.jpg",
+  "https://cdn.discordapp.com/attachments/920362745231192114/1101306082497933352/pexels-laura-paredis-13093376.jpg",
+  "https://cdn.discordapp.com/attachments/920362745231192114/1101306082950905927/pexels-los-muertos-crew-8837890.jpg",
+  "https://cdn.discordapp.com/attachments/920362745231192114/1101306083529732136/pexels-taryn-elliott-5546939.jpg",
 ];
 
 const width = Dimensions.get("window").width;
@@ -25,6 +27,25 @@ const ESPACIO_CONTENEDOR = (width - ANCHO_CONTENEDOR) / 2;
 
 const Slider = () => {
   const scrollX = React.useRef(new Animated.Value(0)).current;
+
+  const [iconColors, setIconColors] = useState(
+    imagenes.reduce((acc, _, index) => {
+      acc[index] = COLORS.extraGray;
+      return acc;
+    }, {})
+  );
+
+  const handleIconPress = (index) => {
+    setIconColors((prevColors) => {
+      const newColors = { ...prevColors };
+      if (prevColors[index] === "#c63637") {
+        newColors[index] = COLORS.extraGray;
+      } else {
+        newColors[index] = "#c63637";
+      }
+      return newColors;
+    });
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -75,11 +96,11 @@ const Slider = () => {
                 }}
               >
                 <Image source={{ uri: item }} style={styles.posterImage} />
-                <TouchableOpacity style={styles.heart}>
-                  <Ionicons name="heart" size={20} color={COLORS.extraGray} />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
-                  <Text style={styles.text}>¡Adquierelo!</Text>
+                <TouchableOpacity
+                  style={styles.heart}
+                  onPress={() => handleIconPress(index)}
+                >
+                  <Ionicons name="heart" size={20} color={iconColors[index]} />
                 </TouchableOpacity>
               </Animated.View>
             </View>
