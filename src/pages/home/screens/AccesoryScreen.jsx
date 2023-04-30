@@ -1,32 +1,74 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { ScrollView, View, StyleSheet } from "react-native";
 import CardScreen from "../components/CardScreen";
 import { COLORS } from "../../../constants";
 
 const AccesoryScreen = () => {
   return (
-    <View style={styles.body}>
-      <CardScreen
-        imageWidth={130}
-        imageHeight={130}
-        top={-60}
-        sourceImage={require('../../../assets/pngs/filtro.png')}
-        name={'Coral'}
-        price={'75'}
-        backgroundColorState={COLORS.lightSkyBlue}
-        nameState={'Descuento 5%'}
-      />
-      <CardScreen 
-        imageWidth={110}
-        imageHeight={110}
-        top={-55}
-        sourceImage={require('../../../assets/pngs/adorno.png')}
-        name={'Adorno cueva'}
-        price={'45'}
-        backgroundColorState={COLORS.lightSkyBlue}
-        nameState={'Descuento 10%'}
-      />
-    </View>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.body}>
+        <View style={styles.cardContainer}>
+          <CardScreen
+            imageWidth={130}
+            imageHeight={130}
+            top={-60}
+            sourceImage={require('../../../assets/pngs/filtro.png')}
+            name={'Coral'}
+            price={'75'}
+            backgroundColorState={COLORS.lightSkyBlue}
+            nameState={'Descuento 5%'}
+          />
+        </View>
+        <View style={styles.cardContainer}>
+          <CardScreen 
+            imageWidth={110}
+            imageHeight={110}
+            top={-55}
+            sourceImage={require('../../../assets/pngs/adorno.png')}
+            name={'Adorno cueva'}
+            price={'45'}
+            backgroundColorState={COLORS.lightSkyBlue}
+            nameState={'Descuento 10%'}
+          />
+        </View>
+        <View style={styles.cardContainer}>
+          <CardScreen 
+            imageWidth={110}
+            imageHeight={110}
+            top={-55}
+            sourceImage={require('../../../assets/pngs/adorno.png')}
+            name={'Otro adorno'}
+            price={'45'}
+            backgroundColorState={COLORS.lightSkyBlue}
+            nameState={'Descuento 10%'}
+          />
+        </View>
+        <View style={styles.cardContainer}>
+          <CardScreen 
+            imageWidth={110}
+            imageHeight={110}
+            top={-55}
+            sourceImage={require('../../../assets/pngs/adorno.png')}
+            name={'Adorno 3'}
+            price={'45'}
+            backgroundColorState={COLORS.lightSkyBlue}
+            nameState={'Descuento 10%'}
+          />
+        </View>
+        <View style={styles.cardContainer}>
+          <CardScreen 
+            imageWidth={110}
+            imageHeight={110}
+            top={-55}
+            sourceImage={require('../../../assets/pngs/adorno.png')}
+            name={'Otro adorno 4'}
+            price={'45'}
+            backgroundColorState={COLORS.lightSkyBlue}
+            nameState={'Descuento 10%'}
+          />
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -34,11 +76,15 @@ export default AccesoryScreen;
 
 const styles = StyleSheet.create({
   body: {
-    flexGrow: 1,
+    flex: 1,
     flexDirection: "row",
+    flexWrap: "wrap",
     backgroundColor: COLORS.white,
-    justifyContent: "center",
-    alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: 'space-between'
+  },
+  cardContainer: {
+    flexBasis: '50%',
+    marginBottom: 10,
+    marginTop: 60,
   },
 });

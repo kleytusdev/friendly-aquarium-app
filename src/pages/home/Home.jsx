@@ -47,7 +47,7 @@ const Navbar = () => {
       </View>
       <View style={styles.card}>
         <View style={styles.column1}>
-          <Text style={styles.title}>Explora tus productos</Text>
+          <Text style={styles.title}>Conoce nuestros productos</Text>
           <Text style={styles.subtitleCard}>Explora nuestro mar de opciones para tus amigos acuáticos</Text>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Explorar</Text>

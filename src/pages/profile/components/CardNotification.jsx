@@ -10,7 +10,7 @@ const CardNotification = () => {
       <View style={styles.container}>
         <View style={styles.textContainer}>
             <View style={{ flexDirection: "column" }}>
-            <Text style={styles.title}>Notifications</Text>
+            <Text style={styles.title}>Notificaciones</Text>
             <MiniStat name={"2 NUEVOS"} backgroundColor={COLORS.lightSkyBlue} styleText={{color: COLORS.primary}} />
         </View>
         </View>

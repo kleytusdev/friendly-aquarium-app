@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { COLORS } from "../../../constants";
+import ImageModal from 'react-native-image-modal';
 
 const NewNotification = ({ subject, date, imageSource }) => {
   return (
     <>
       <TouchableOpacity style={styles.container}>
-        <Image
+        <ImageModal
           style={styles.avatar}
           source={imageSource}
         />

@@ -4,6 +4,7 @@ import Login from '../pages/auth/Login';
 import Welcome from '../pages/start/Welcome';
 import { ROUTES, COLORS } from '../constants';
 import BottomTabNavigator from './BottomTabNavigator';
+import Favorite from '../pages/favorite/Favorite';
 
 const Stack = createStackNavigator();
 

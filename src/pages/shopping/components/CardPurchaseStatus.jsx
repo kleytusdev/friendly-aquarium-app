@@ -1,25 +1,37 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { COLORS } from "../../../constants";
 import IconShoppingCart from "../../../assets/svgs/shopping-cart.svg";
 import MiniStat from "../../profile/components/MiniStat";
 
-const CardPurchaseStatus = ({ image, product, date, price, status }) => {
+const CardPurchaseStatus = ({ image, product, date, price, status, onPressPurchase }) => {
+
+
   return (
     <>
       <View style={styles.container}>
-        <View style={styles.photoContainer}>
-          {image}
-        </View>
+        <View style={styles.photoContainer}>{image}</View>
         <View style={styles.infoContainer}>
           <Text style={styles.textProduct}>{product}</Text>
           <Text style={styles.textDate}>{date}</Text>
           <Text style={styles.textPrice}>S/ {price}</Text>
-          <MiniStat name={status} backgroundColor={COLORS.primary} styleText={{color: '#fff'}} />
+          <MiniStat
+            name={status}
+            backgroundColor={
+              status === "ADQUIRIDO"
+                ? "#AFF6DC"
+                : status === "PENDIENTE"
+                ? "#F38B8B"
+                : COLORS.primary
+            }
+            styleText={{ color: "#fff", fontSize: 10 }}
+          />
         </View>
-        <View style={styles.statusContainer}>
+        <TouchableOpacity 
+          onPress={onPressPurchase}
+          style={styles.statusContainer}>
           <IconShoppingCart fill="#fff" width={40} height={40} />
-        </View>
+        </TouchableOpacity>
       </View>
     </>
   );
@@ -35,7 +47,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     elevation: 10,
     marginVertical: 10,
-    marginHorizontal: 5
+    marginHorizontal: 5,
   },
   photoContainer: {
     flex: 0.8,

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   StyleSheet,
-  Text,
   View,
   Image,
   Dimensions,
@@ -9,7 +8,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../../../constants";
 
 const imagenes = [
@@ -48,7 +46,7 @@ const Slider = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Animated.FlatList
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
@@ -72,10 +70,6 @@ const Slider = () => {
             (index + 2) * ANCHO_CONTENEDOR,
           ];
 
-          const scrollY = scrollX.interpolate({
-            inputRange,
-            outputRange: [0, 10, 0],
-          });
 
           const rotate = scrollX.interpolate({
             inputRange,
@@ -92,7 +86,7 @@ const Slider = () => {
               <Animated.View
                 style={{
                   marginHorizontal: -5,
-                  transform: [{ rotate }, { translateY: scrollY }, { scale }],
+                  transform: [{ rotate }, { scale }],
                 }}
               >
                 <Image source={{ uri: item }} style={styles.posterImage} />
@@ -107,7 +101,7 @@ const Slider = () => {
           );
         }}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -115,8 +109,8 @@ export default Slider;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
+    marginBottom: 40,
+    backgroundColor: COLORS.white,
   },
   posterImage: {
     width: "100%",

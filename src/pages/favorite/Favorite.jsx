@@ -9,9 +9,9 @@ const Favorite = () => {
   return (
     <SafeAreaView style={ styles.body }>
       <View style={ styles.header }>
-        <Text style={ styles.title }>Explora tu</Text>
-        <Text style={ styles.title }>Historial de Pedidos</Text>
-        <Text style={ styles.subtitle }>Tus pedidos en un solo lugar</Text>
+        <Text style={ styles.title }>Tus Colecciones</Text>
+        <Text style={ styles.title }>Favoritas</Text>
+        <Text style={ styles.subtitle }>Aquí podrás encontrar los posts más importantes para tí, que lo disfrutes.</Text>
       </View>
       <Slider/>
       <CardExplore />

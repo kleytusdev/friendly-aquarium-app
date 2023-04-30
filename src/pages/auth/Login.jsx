@@ -68,7 +68,8 @@ const Login = () => {
         name="Ingresa"
         backgroundColor={COLORS.primary}
         textColor={COLORS.white}
-        onPress={handleSignIn}
+        // onPress={handleSignIn}
+        onPress={navigation.navigate('Home')}
       />
       <Button
         name="Regístrate"

@@ -1,12 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { COLORS } from "../../../constants";
+import { ROUTES, COLORS } from "../../../constants";
 import { Ionicons } from "@expo/vector-icons";
 import IconBetta from "../../../assets/svgs/betta-fish.svg"
+import { useNavigation } from '@react-navigation/native';
 
 const StartExplore = () => {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate(ROUTES.HOME_TAB)}>
       <View style={styles.button}>
         <View style={styles.circle}>
           <IconBetta fill='#3B3947' width={35} height={35} />
