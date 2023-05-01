@@ -17,6 +17,7 @@ import Input from "./components/Input";
 import firebaseConfig from "./../../../firebase-config";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { initializeApp } from 'firebase/app';
+import IconBettaGradient from '../../assets/svgs/betta-fish-gradient.svg'
 
 const Login = () => {
   const navigation = useNavigation();
@@ -29,19 +30,6 @@ const Login = () => {
 
   console.log({ email, password })
   
-  const handleCreateAccount = () => {
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      console.log('Cuenta creada');
-      const user = userCredential.user;
-      console.log(user);
-    })
-    .catch(error => {
-      console.log(error);
-      Alert.alert(error.message)
-    })
-  }
-
   const handleSignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -58,7 +46,8 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Inicia Sesión</Text>
+      <IconBettaGradient style width={140} height={140} />
+      <Text style={styles.title}>Iniciar Sesión</Text>
       <View style={styles.inputContainer}>
         <Input onChangeText={(text) => setEmail(text)} placeholder={'E-mail'} />
         <Input onChangeText={(text) => setPassword(text)} placeholder={'Contraseña'} />
@@ -66,22 +55,21 @@ const Login = () => {
       
       <Button
         name="Ingresa"
-        backgroundColor={COLORS.primary}
+        backgroundColor={COLORS.jetBlack}
         textColor={COLORS.white}
-        // onPress={handleSignIn}
-        onPress={navigation.navigate('Home')}
+        onPress={handleSignIn}
+        // onPress={() => navigation.navigate('Home')}
       />
       <Button
         name="Regístrate"
         borderWidth={1}
-        borderColor={COLORS.grayLight}
         backgroundColor={COLORS.white}
-        textColor={COLORS.gray}
-        onPress={handleCreateAccount}
+        textColor={COLORS.jetBlack}
+        onPress={() => navigation.navigate('Register')}
       />
 
       <View style={styles.question}>
-        <Text>O continúa con</Text>
+        <Text style={styles.textQuestion}>O continúa con</Text>
       </View>
 
       <View style={styles.socialButtonsContainer}>
@@ -102,7 +90,7 @@ export default Login;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.background,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -110,7 +98,8 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'Poppins-Medium',
     fontSize: 20,
-    marginBottom: 30,
+    marginVertical: 30,
+    color: COLORS.white
   },
   inputContainer: {
     marginBottom: 16,
@@ -120,7 +109,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   facebookButton: {
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.white,
     padding: 12,
     borderRadius: 8,
     width: 120,
@@ -128,11 +117,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     borderWidth: 1,
-    borderColor: "#C3C3C3",
     borderRadius: 10,
   },
   googleButton: {
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.white,
     padding: 12,
     borderRadius: 8,
     width: 120,
@@ -140,7 +128,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     borderWidth: 1,
-    borderColor: "#C3C3C3",
     borderRadius: 10,
   },
   socialButtonText: {
@@ -152,5 +139,9 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 10,
   },
+  textQuestion: {
+    color: COLORS.white,
+    fontFamily: 'Poppins-Regular'
+  }
 });
 

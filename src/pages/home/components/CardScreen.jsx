@@ -25,9 +25,8 @@ export default CardScreen
 
 const styles = StyleSheet.create({
   card: {
-    flex: 0.5,
-    height: 200,
-    backgroundColor: COLORS.primary,
+    height: 170,
+    backgroundColor: COLORS.jetBlack,
     borderRadius: 26,
     marginHorizontal: 5,
     justifyContent: 'center',
@@ -37,8 +36,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   textContainer: {
-    marginBottom: 30,
-    gap: 5
+    marginBottom: 20,
   },
   name: {
     fontFamily: 'Poppins-Regular',

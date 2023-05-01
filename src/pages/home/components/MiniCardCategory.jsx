@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   focusedButton: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
   },
   focusedButtonText: {
     color: COLORS.white,

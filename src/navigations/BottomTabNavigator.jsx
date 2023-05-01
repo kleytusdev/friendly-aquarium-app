@@ -17,7 +17,7 @@ const BottomTabNavigator = () => {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBarStyle,
-        tabBarActiveTintColor: COLORS.primary,
+        tabBarActiveTintColor: COLORS.white,
         tabBarIcon: ({ color, focused }) => {
           let iconName;
           if (route.name === ROUTES.HOME_TAB){
@@ -47,8 +47,7 @@ const styles = StyleSheet.create({
   tabBarStyle: {
     height: 80,
     paddingHorizontal: 30,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.background,
     borderTopWidth: 0,
-    elevation: 0
   }
 })

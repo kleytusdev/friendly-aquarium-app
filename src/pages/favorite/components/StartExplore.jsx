@@ -16,6 +16,7 @@ const StartExplore = () => {
         </View>
         <Text style={styles.buttonText}>Únete ahora</Text>
         <Ionicons
+          style={{ marginRight: 10 }}
           name="arrow-forward-sharp"
           size={20}
           color={COLORS.extraGray}
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
   button: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: COLORS.primaryLight,
+    backgroundColor: COLORS.gray,
     borderRadius: 50,
     paddingVertical: 6,
     paddingHorizontal: 6,
@@ -42,10 +43,6 @@ const styles = StyleSheet.create({
   circle: {
     padding: 10,
     borderRadius: 70,
-    backgroundColor: "white",
-  },
-  square: {
-    padding: 20,
     backgroundColor: "white",
   },
   buttonText: {

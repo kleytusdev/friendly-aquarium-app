@@ -110,7 +110,7 @@ export default Slider;
 const styles = StyleSheet.create({
   container: {
     marginBottom: 40,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.background,
   },
   posterImage: {
     width: "100%",

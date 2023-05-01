@@ -74,12 +74,11 @@ const Profile = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.background,
     paddingHorizontal: 20,
-    marginTop: 15
   },
   header: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   stats: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
     flexDirection: "row",
     justifyContent: "space-around",
     marginVertical: 20,
@@ -128,7 +127,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   statValue: {
-    color: COLORS.lightSkyBlue,
+    color: COLORS.secondary,
     fontWeight: "bold",
     fontSize: 18,
   },

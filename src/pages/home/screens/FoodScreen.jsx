@@ -6,7 +6,8 @@ import { COLORS } from "../../../constants";
 const FoodScreen = () => {
   return (
     <>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
+
         <View style={styles.body}>
           <View style={styles.cardContainer}>
             <CardScreen
@@ -16,7 +17,7 @@ const FoodScreen = () => {
               sourceImage={require('../../../assets/pngs/Food1.png')}
               name={'Hojuelas'}
               price={'18'}
-              backgroundColorState={COLORS.lightSkyBlue}
+              backgroundColorState={COLORS.secondary}
               nameState={'Disponible'}
             />
           </View>
@@ -28,7 +29,7 @@ const FoodScreen = () => {
               sourceImage={require('../../../assets/pngs/Food2.png')}
               name={'Granulado'}
               price={'25'}
-              backgroundColorState={COLORS.lightSkyBlue}
+              backgroundColorState={COLORS.secondary}
               nameState={'Descuento 5%'}
             />
           </View>
@@ -40,7 +41,7 @@ const FoodScreen = () => {
               sourceImage={require('../../../assets/pngs/Food2.png')}
               name={'Granulado'}
               price={'25'}
-              backgroundColorState={COLORS.lightSkyBlue}
+              backgroundColorState={COLORS.secondary}
               nameState={'Descuento 5%'}
             />
           </View>
@@ -52,7 +53,7 @@ const FoodScreen = () => {
               sourceImage={require('../../../assets/pngs/Food2.png')}
               name={'Granulado'}
               price={'25'}
-              backgroundColorState={COLORS.lightSkyBlue}
+              backgroundColorState={COLORS.secondary}
               nameState={'Descuento 5%'}
             />
           </View>
@@ -67,14 +68,15 @@ export default FoodScreen;
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    backgroundColor: COLORS.white,
-    justifyContent: 'space-between'
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    backgroundColor: COLORS.background,
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
   },
   cardContainer: {
     flexBasis: '50%',
-    marginBottom: 10,
+    paddingHorizontal: 5,
     marginTop: 60,
   },
 });

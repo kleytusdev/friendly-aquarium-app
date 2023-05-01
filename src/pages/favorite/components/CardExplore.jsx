@@ -18,7 +18,7 @@ export default CardExplore;
 const styles = StyleSheet.create({
   card: {
     justifyContent: "center",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
     borderRadius: 35,
     marginHorizontal: 40,
     paddingHorizontal: 20,

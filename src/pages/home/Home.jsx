@@ -6,79 +6,84 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../../constants";
 import { Ionicons } from "@expo/vector-icons";
 import CategoryNavigator from "./navigations/CategoryNavigator";
+import FishScreen from "./screens/FishScreen";
 
-const Navbar = () => {
-
+const Home = () => {
   return (
-    <SafeAreaView style={styles.body}>
-      <View style={styles.navbar}>
-        <View style={styles.left}>
-          <Ionicons name="options" size={20} color={COLORS.primary} />
+    <>
+      <SafeAreaView style={styles.body}>
+        <View style={styles.navbar}>
+          <View style={styles.left}>
+            <Ionicons name="options" size={20} color={COLORS.white} />
+          </View>
+          <View style={styles.center}>
+            <Text style={styles.navbarText}>Home</Text>
+          </View>
+          <View style={styles.right}>
+            <Ionicons name="search" size={20} color={COLORS.white} />
+          </View>
         </View>
-        <View style={styles.center}>
-          <Text style={styles.navbarText}>Home</Text>
-        </View>
-        <View style={styles.right}>
-          <Ionicons name="search" size={20} color={COLORS.primary} />
-        </View>
-      </View>
 
-      <View style={styles.containerSubTitle}>
-        <Text style={styles.greeting}>¡Hola Aldo!</Text>
-        <Text style={styles.subtitle}>
-          Descubre el mundo acuático
+        <View style={styles.containerSubTitle}>
+          <Text style={styles.greeting}>¡Hola Aldo!</Text>
+          <Text style={styles.subtitle}>Descubre el mundo acuático</Text>
+        </View>
+        <View style={styles.bottomContainer}>
+          <View style={styles.inputContainer}>
+            <View style={styles.searchContainer}>
+              <Ionicons
+                style={{ marginHorizontal: 13 }}
+                name="search"
+                size={20}
+                color={COLORS.gray}
+              />
+              <TextInput style={styles.input} placeholder="Busca tu producto" />
+            </View>
+            <TouchableOpacity style={styles.circle}>
+              <Ionicons name="options" size={20} color={COLORS.extraGray} />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.card}>
+          <View style={styles.column1}>
+            <Text style={styles.title}>Conoce nuestros productos</Text>
+            <Text style={styles.subtitleCard}>
+              Explora nuestro mar de opciones para tus amigos acuáticos
+            </Text>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Explorar</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.column2}>
+            <View style={styles.image}>
+              <Image
+                style={{ width: 100, height: 100 }}
+                source={require("../../assets/pngs/welcome-betta.png")}
+              />
+            </View>
+          </View>
+        </View>
+        <Text style={{ marginLeft: 10, fontFamily: "Poppins-Medium", fontSize: 18, color: COLORS.white }}>
+          Categoría
         </Text>
-      </View>
-      <View style={styles.bottomContainer}>
-        <View style={styles.inputContainer}>
-          <View style={styles.searchContainer}>
-            <Ionicons style={{marginHorizontal: 13}} name="search" size={20} color={COLORS.gray} />
-            <TextInput style={styles.input} placeholder="Busca tu producto" />
-          </View>
-          <TouchableOpacity style={styles.circle}>
-            <Ionicons name="options" size={20} color={COLORS.extraGray} />
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={styles.card}>
-        <View style={styles.column1}>
-          <Text style={styles.title}>Conoce nuestros productos</Text>
-          <Text style={styles.subtitleCard}>Explora nuestro mar de opciones para tus amigos acuáticos</Text>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Explorar</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.column2}>
-          <View style={styles.image}>
-            <Image
-              style={{ width: 100, height: 100 }}
-              source={require("../../assets/pngs/welcome-betta.png")}
-            />
-          </View>
-        </View>
-      </View>
-      <Text
-        style={{ marginLeft: 10, fontFamily: "Poppins-Medium", fontSize: 18 }}
-      >
-        Categoría
-      </Text>
-
-      <CategoryNavigator />
-    </SafeAreaView>
+        <CategoryNavigator />
+      </SafeAreaView>
+    </>
   );
 };
 
-export default Navbar;
+export default Home;
 
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.background,
     paddingHorizontal: 25,
   },
   navbar: {
@@ -88,22 +93,22 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   navbarText: {
-    color: COLORS.primary,
+    color: COLORS.white,
     fontSize: 17,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: "Poppins-Medium",
   },
   containerSubTitle: {
     marginTop: 10,
   },
   greeting: {
-    fontFamily: 'Poppins-Medium',
+    fontFamily: "Poppins-Medium",
     fontSize: 24,
-    marginBottom: -4
+    color: COLORS.white,
   },
   subtitle: {
-    fontFamily: 'Poppins-Regular',
+    fontFamily: "Poppins-Light",
     fontSize: 15,
-    color: COLORS.primary,
+    color: COLORS.gunmetal,
   },
   bottomContainer: {
     marginTop: 20,
@@ -112,15 +117,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  searchContainer:{
+  searchContainer: {
     flex: 1,
-    backgroundColor: COLORS.extraGray,
+    backgroundColor: COLORS.white,
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 25,
   },
   input: {
-    backgroundColor: COLORS.extraGray,
+    backgroundColor: COLORS.white,
     height: 50,
     borderRadius: 25,
     flex: 1,
@@ -129,7 +134,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
     marginLeft: 10,
     justifyContent: "center",
     alignItems: "center",
@@ -137,7 +142,7 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
     borderRadius: 30,
     padding: 20,
     marginVertical: 20,
@@ -155,19 +160,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontFamily: 'Poppins-Medium',
+    fontFamily: "Poppins-Medium",
     fontSize: 18,
     marginBottom: 5,
     color: COLORS.white,
   },
   subtitleCard: {
-    fontFamily: 'Poppins-Regular',
+    fontFamily: "Poppins-Regular",
     fontSize: 12,
     color: COLORS.extraGray,
     marginBottom: 10,
   },
   button: {
-    backgroundColor: COLORS.lightSkyBlue,
+    backgroundColor: COLORS.secondary,
     marginVertical: 10,
     width: 90,
     height: 23,
@@ -175,7 +180,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   buttonText: {
-    fontFamily: 'Poppins-Medium',
+    fontFamily: "Poppins-Medium",
     fontSize: 12,
     color: COLORS.primary,
     alignSelf: "center",

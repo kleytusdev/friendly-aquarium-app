@@ -12,6 +12,7 @@
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "^1.4.4",
     "firebase": "^9.21.0",
+    "formik": "^2.2.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.7",
@@ -26,7 +27,8 @@
     "react-native-svg": "^13.4.0",
     "react-native-svg-transformer": "^1.0.0",
     "react-native-vector-icons": "^9.2.0",
-    "react-native-web": "~0.18.7"
+    "react-native-web": "~0.18.7",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3"

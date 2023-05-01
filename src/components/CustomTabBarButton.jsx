@@ -1,12 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const CustomTabBarButton = (props) => {
-  const {children, accessibilityState} = props;
+const CustomTabBarButton = () => {
 
   return (
     <View>
-      <Text>{children}</Text>
+      <Text>Testeando</Text>
     </View>
   )
 }

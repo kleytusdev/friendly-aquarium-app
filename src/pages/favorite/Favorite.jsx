@@ -24,7 +24,7 @@ export default Favorite
 const styles = StyleSheet.create({
   body: {
     flex:1,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.background,
   },
   header: {
     marginVertical: 30,
@@ -34,12 +34,13 @@ const styles = StyleSheet.create({
   title: {
     lineHeight: 35,
     fontSize: 30,
-    fontFamily: 'Poppins-SemiBold'
+    fontFamily: 'Poppins-SemiBold',
+    color: COLORS.white
   },
   subtitle: {
-    color: COLORS.gray,
+    color: COLORS.gunmetal,
     fontSize: 15,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: 'Poppins-Light',
     marginVertical: 5
   }
 })

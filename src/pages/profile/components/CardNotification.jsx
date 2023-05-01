@@ -38,7 +38,7 @@ export default CardNotification;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
     borderRadius: 20,
     paddingHorizontal: 30,
     paddingVertical: 15

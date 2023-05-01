@@ -19,7 +19,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash-fa.png",
+      "image": "./assets/splash-friendly-aquarium.png",
       "resizeMode": "cover"
     },
     "assetBundlePatterns": [

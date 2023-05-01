@@ -24,7 +24,7 @@ export default CreditCard;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
     borderRadius: 40,
     paddingHorizontal: 30,
     paddingVertical: 15,

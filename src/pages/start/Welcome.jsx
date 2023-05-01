@@ -11,10 +11,7 @@ const Welcome = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Friendly Aquarium</Text>
       <View style={styles.containerImage}>
-        <Image
-                source={Fish}
-                style={styles.image}
-        />
+        <Image source={Fish} style={styles.image} />
       </View>
       <Text style={styles.subtitle}>Un amor unilateral por los peces</Text>
       <Text style={styles.text}>Estamos muy emocionados de compartir nuestra pasión por los peces contigo. ¡Explora nuestra selección y descubre a tus nuevos compañeros acuáticos!</Text>
@@ -30,7 +27,7 @@ export default Welcome;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.background,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -39,12 +36,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     letterSpacing: 4,
     marginBottom: 16,
+    color: COLORS.white
   },
   containerImage: {
     paddingHorizontal: 40,
     paddingVertical: 20,
     marginVertical: 30,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: COLORS.white,
     borderRadius: 45
   },
   image: {
@@ -57,18 +55,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 22,
     marginBottom: 8,
-    marginHorizontal: 60
+    marginHorizontal: 60,
+    color: COLORS.white
   },
   text: {
-    fontFamily: 'Poppins-Regular',
+    fontFamily: 'Poppins-Light',
     textAlign: 'center',
     alignSelf: 'center',
     marginBottom: 32,
     marginHorizontal: 45,
-    color: '#797979'
+    color: COLORS.gunmetal
   },
   button: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.jetBlack,
     padding: 16,
     borderRadius: 10,
     width: 280,

@@ -19,12 +19,12 @@ const CardPurchaseStatus = ({ image, product, date, price, status, onPressPurcha
             name={status}
             backgroundColor={
               status === "ADQUIRIDO"
-                ? "#AFF6DC"
+                ? "#5E7E54"
                 : status === "PENDIENTE"
-                ? "#F38B8B"
+                ? "#D46A6A"
                 : COLORS.primary
             }
-            styleText={{ color: "#fff", fontSize: 10 }}
+            styleText={{ color: COLORS.white, fontSize: 10, fontFamily: 'Poppins-Bold' }}
           />
         </View>
         <TouchableOpacity 
@@ -42,7 +42,7 @@ export default CardPurchaseStatus;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.jetBlack,
     borderRadius: 30,
     overflow: "hidden",
     elevation: 10,
@@ -60,19 +60,22 @@ const styles = StyleSheet.create({
   },
   statusContainer: {
     flex: 0.4,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.secondary,
     justifyContent: "center",
     alignItems: "center",
   },
   textProduct: {
     fontFamily: "Poppins-SemiBold",
+    color: COLORS.white,
     fontSize: 17,
   },
   textDate: {
     fontFamily: "Poppins-Regular",
+    color: COLORS.white,
   },
   textPrice: {
     fontFamily: "Poppins-SemiBold",
+    color: COLORS.white,
     fontSize: 15,
   },
 });
