@@ -1,9 +1,13 @@
 import React from "react";
 import { ScrollView, View, StyleSheet } from "react-native";
 import CardScreen from "../components/CardScreen";
-import { COLORS } from "../../../constants";
+import { ROUTES, COLORS } from "../../../constants";
+import { useNavigation } from '@react-navigation/native';
 
 const AccesoryScreen = () => {
+
+  const navigation = useNavigation();
+
   return (
     <>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -11,62 +15,82 @@ const AccesoryScreen = () => {
         <View style={styles.body}>
           <View style={styles.cardContainer}>
             <CardScreen
+              onPress={() => navigation.navigate(ROUTES.PRODUCT, {
+                sourceImage: require("../../../assets/pngs/filtro.png"),
+                name: "Filtro Mochila",
+                price: "75.00",
+              })}
               imageWidth={130}
               imageHeight={130}
-              top={-60}
+              top={-50}
               sourceImage={require('../../../assets/pngs/filtro.png')}
-              name={'Coral'}
-              price={'75'}
+              name={'Filtro Mochila'}
+              price={'75.00'}
               backgroundColorState={COLORS.secondary}
-              nameState={'Descuento 5%'}
             />
           </View>
           <View style={styles.cardContainer}>
-            <CardScreen 
+            <CardScreen
+              onPress={() => navigation.navigate(ROUTES.PRODUCT, {
+                sourceImage: require("../../../assets/pngs/adorno.png"),
+                name: "Adorno cueva",
+                price: "45.00",
+              })}
               imageWidth={110}
               imageHeight={110}
-              top={-55}
+              top={-45}
               sourceImage={require('../../../assets/pngs/adorno.png')}
               name={'Adorno cueva'}
-              price={'45'}
+              price={'45.00'}
               backgroundColorState={COLORS.secondary}
-              nameState={'Descuento 10%'}
             />
           </View>
           <View style={styles.cardContainer}>
             <CardScreen 
+              onPress={() => navigation.navigate(ROUTES.PRODUCT, {
+                sourceImage: require("../../../assets/pngs/accesorio-33.png"),
+                name: "Sustrato",
+                price: "30.00",
+              })}
               imageWidth={110}
               imageHeight={110}
-              top={-55}
-              sourceImage={require('../../../assets/pngs/adorno.png')}
-              name={'Otro adorno'}
-              price={'45'}
+              top={-45}
+              sourceImage={require('../../../assets/pngs/accesorio-33.png')}
+              name={'Sustrato'}
+              price={'30.00'}
               backgroundColorState={COLORS.secondary}
-              nameState={'Descuento 10%'}
             />
           </View>
           <View style={styles.cardContainer}>
             <CardScreen 
+              onPress={() => navigation.navigate(ROUTES.PRODUCT, {
+                sourceImage: require("../../../assets/pngs/accesorio-box.png"),
+                name: "Cartucho de filtro",
+                price: "33.00",
+              })}
               imageWidth={110}
               imageHeight={110}
-              top={-55}
-              sourceImage={require('../../../assets/pngs/adorno.png')}
-              name={'Adorno 3'}
-              price={'45'}
+              top={-45}
+              sourceImage={require('../../../assets/pngs/accesorio-box.png')}
+              name={'Cartucho de filtro'}
+              price={'33.00'}
               backgroundColorState={COLORS.secondary}
-              nameState={'Descuento 10%'}
             />
           </View>
           <View style={styles.cardContainer}>
             <CardScreen 
+              onPress={() => navigation.navigate(ROUTES.PRODUCT, {
+                sourceImage: require("../../../assets/pngs/accesorio-temp.png"),
+                name: "Termostato",
+                price: "28.00",
+              })}
               imageWidth={110}
               imageHeight={110}
-              top={-55}
-              sourceImage={require('../../../assets/pngs/adorno.png')}
-              name={'Otro adorno 4'}
-              price={'45'}
+              top={-45}
+              sourceImage={require('../../../assets/pngs/accesorio-temp.png')}
+              name={'Termostato'}
+              price={'28.00'}
               backgroundColorState={COLORS.secondary}
-              nameState={'Descuento 10%'}
             />
           </View>
         </View>

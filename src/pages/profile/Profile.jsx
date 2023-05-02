@@ -6,12 +6,12 @@ import { COLORS } from "../../constants";
 import CardNotification from "./components/CardNotification";
 import MiniStat from "./components/MiniStat";
 import CreditCard from "./components/CreditCard";
-import IconLogout from './../../assets/icons/logout.png';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signOut } from 'firebase/auth';
 import firebaseConfig from "./../../../firebase-config";
+import IconLogout from "../../assets/svgs/logout.svg"
 
 const Profile = () => {
 
@@ -47,7 +47,7 @@ const Profile = () => {
             </View>
           </View>
           <TouchableOpacity onPress={handleSignOut}>
-            <Image style={{ width: 25, height: 25, marginRight: 20 }} source={IconLogout}/>
+            <IconLogout style={{ marginRight: 15 }} color={COLORS.secondary} width={20} height={20} />
           </TouchableOpacity>
         </View>
         <View style={styles.stats}>

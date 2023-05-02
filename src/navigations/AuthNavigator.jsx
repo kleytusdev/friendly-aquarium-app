@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
 import Welcome from '../pages/start/Welcome';
+import ProductScreen from '../pages/home/screens/ProductScreen';
 import { ROUTES, COLORS } from '../constants';
 import BottomTabNavigator from './BottomTabNavigator';
 
@@ -22,6 +23,7 @@ export default function AuthNavigator() {
 
       <Stack.Screen options={{headerShown: false}} name={ROUTES.LOGIN} component={Login} />
       <Stack.Screen name={ROUTES.REGISTER} component={Register} />
+      <Stack.Screen options={{headerShown: false}} name={ROUTES.PRODUCT} component={ProductScreen} />
       <Stack.Screen options={{headerShown: false}} name={ROUTES.WELCOME} component={Welcome} />
       <Stack.Screen options={{headerShown: false}} name={ROUTES.HOME} component={BottomTabNavigator} />
     </Stack.Navigator>

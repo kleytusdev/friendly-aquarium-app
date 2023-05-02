@@ -6,26 +6,24 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
-  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../../constants";
 import { Ionicons } from "@expo/vector-icons";
 import CategoryNavigator from "./navigations/CategoryNavigator";
-import FishScreen from "./screens/FishScreen";
 
 const Home = () => {
   return (
     <>
       <SafeAreaView style={styles.body}>
         <View style={styles.navbar}>
-          <View style={styles.left}>
+          <View>
             <Ionicons name="options" size={20} color={COLORS.white} />
           </View>
-          <View style={styles.center}>
+          <View>
             <Text style={styles.navbarText}>Home</Text>
           </View>
-          <View style={styles.right}>
+          <View>
             <Ionicons name="search" size={20} color={COLORS.white} />
           </View>
         </View>
