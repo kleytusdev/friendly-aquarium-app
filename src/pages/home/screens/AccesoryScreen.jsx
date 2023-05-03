@@ -16,13 +16,15 @@ const AccesoryScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require("../../../assets/pngs/filtro.png"),
-                name: "Filtro Mochila",
-                price: "75.00",
+                product: {
+                  sourceImage: require("../../../assets/pngs/filtro.png"),
+                  name: "Filtro Mochila",
+                  price: "75.00",
+                }
               })}
-              imageWidth={130}
-              imageHeight={130}
-              top={-50}
+              imageWidth={100}
+              imageHeight={100}
+              top={-40}
               sourceImage={require('../../../assets/pngs/filtro.png')}
               name={'Filtro Mochila'}
               price={'75.00'}
@@ -32,13 +34,15 @@ const AccesoryScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require("../../../assets/pngs/adorno.png"),
-                name: "Adorno cueva",
-                price: "45.00",
+                product: {
+                  sourceImage: require("../../../assets/pngs/adorno.png"),
+                  name: "Adorno cueva",
+                  price: "45.00",
+                }
               })}
-              imageWidth={110}
-              imageHeight={110}
-              top={-45}
+              imageWidth={90}
+              imageHeight={90}
+              top={-40}
               sourceImage={require('../../../assets/pngs/adorno.png')}
               name={'Adorno cueva'}
               price={'45.00'}
@@ -48,9 +52,11 @@ const AccesoryScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen 
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require("../../../assets/pngs/accesorio-33.png"),
-                name: "Sustrato",
-                price: "30.00",
+                product: {
+                  sourceImage: require("../../../assets/pngs/accesorio-33.png"),
+                  name: "Sustrato",
+                  price: "30.00",
+                }
               })}
               imageWidth={110}
               imageHeight={110}
@@ -64,12 +70,14 @@ const AccesoryScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen 
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require("../../../assets/pngs/accesorio-box.png"),
-                name: "Cartucho de filtro",
-                price: "33.00",
+                product: {
+                  sourceImage: require("../../../assets/pngs/accesorio-box.png"),
+                  name: "Cartucho de filtro",
+                  price: "33.00",
+                }
               })}
-              imageWidth={110}
-              imageHeight={110}
+              imageWidth={90}
+              imageHeight={90}
               top={-45}
               sourceImage={require('../../../assets/pngs/accesorio-box.png')}
               name={'Cartucho de filtro'}
@@ -80,9 +88,11 @@ const AccesoryScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen 
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require("../../../assets/pngs/accesorio-temp.png"),
-                name: "Termostato",
-                price: "28.00",
+                product: {
+                  sourceImage: require("../../../assets/pngs/accesorio-temp.png"),
+                  name: "Termostato",
+                  price: "28.00",
+                }
               })}
               imageWidth={110}
               imageHeight={110}

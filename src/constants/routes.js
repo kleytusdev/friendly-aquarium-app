@@ -4,6 +4,7 @@ export default {
     LOGIN: 'Login',
     REGISTER: 'Register',
     PRODUCT: 'Product',
+    PRODUCTQUEUE: 'ProductQueue',
 
     HOME: 'Home',
     FAVORITE: 'Favorite',

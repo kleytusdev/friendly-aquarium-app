@@ -6,14 +6,21 @@ const CreditCard = () => {
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>Credit Card</Text>
-        <Text style={styles.numberCard}>**** ******** 12345</Text>
-        <View style={styles.row}>
-          <Text style={styles.nameHolder}>Aldo de la Cruz Gallegos</Text>
-          <Image
-            source={require("../../../assets/img/mastercard.png")}
-            style={{ width: 45, height: 45 }}
-          />
+        <View style={{ marginBottom: 60}}>
+          <View style={styles.row}>
+            <Image
+                source={require("../../../assets/img/mastercard.png")}
+                style={{ width: 45, height: 45 }}
+            />
+            <Text style={styles.title}>Tarjeta de Crédito</Text>
+          </View>
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+          <View>
+            <Text style={styles.numberCard}>**** ******** 12345</Text>
+            <Text style={styles.nameHolder}>Leon Sandoy</Text>
+          </View>
+          <Text style={styles.date}>04/28</Text>
         </View>
       </View>
     </View>
@@ -25,20 +32,20 @@ export default CreditCard;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.jetBlack,
-    borderRadius: 40,
-    paddingHorizontal: 30,
-    paddingVertical: 15,
+    borderRadius: 30,
+    paddingHorizontal: 25,
+    paddingTop: 5,
+    paddingBottom: 20,
     marginVertical: 20,
   },
   textContainer: {
     marginVertical: 15,
   },
   title: {
-    fontFamily: "Poppins-SemiBold",
+    fontFamily: "Poppins-Regular",
     color: COLORS.white,
     fontSize: 15,
     marginRight: 5,
-    paddingBottom: 20,
   },
   row: {
     flexDirection: "row",
@@ -48,11 +55,16 @@ const styles = StyleSheet.create({
   numberCard: {
     fontFamily: "Poppins-SemiBold",
     color: COLORS.white,
-    fontSize: 18,
+    fontSize: 15,
   },
   nameHolder: {
-    fontFamily: "Poppins-Regular",
+    fontFamily: "Poppins-Light",
     color: COLORS.white,
     fontSize: 13,
   },
+  date: {
+    fontFamily: "Poppins-SemiBold",
+    color: COLORS.white,
+    fontSize: 15,
+  }
 });

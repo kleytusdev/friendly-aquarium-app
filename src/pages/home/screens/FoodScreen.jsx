@@ -16,11 +16,13 @@ const FoodScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require('../../../assets/pngs/food-black.png'),
-                name: "Granulado",
-                price: "30.00",
+                product: {
+                  sourceImage: require('../../../assets/pngs/food-black.png'),
+                  name: "Granulado",
+                  price: "30.00",
+                }
               })}
-              imageWidth={140}
+              imageWidth={110}
               imageHeight={110}
               top={-40}
               sourceImage={require('../../../assets/pngs/food-black.png')}
@@ -33,9 +35,11 @@ const FoodScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require('../../../assets/pngs/food-black-blue.png'),
-                name: "Granulado",
-                price: "30.00",
+                product: {
+                  sourceImage: require('../../../assets/pngs/food-black-blue.png'),
+                  name: "Granulado",
+                  price: "30.00",
+                }
               })}
               imageWidth={140}
               imageHeight={110}
@@ -50,9 +54,11 @@ const FoodScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require('../../../assets/pngs/food-goldfish.png'),
-                name: "Granulado",
-                price: "30.00",
+                product: {
+                  sourceImage: require('../../../assets/pngs/food-goldfish.png'),
+                  name: "Granulado",
+                  price: "30.00",
+                }
               })}
               imageWidth={140}
               imageHeight={110}
@@ -67,9 +73,11 @@ const FoodScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen 
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require('../../../assets/pngs/Food-Orange.png'),
-                name: "Granulado",
-                price: "30.00",
+                product: {
+                  sourceImage: require('../../../assets/pngs/Food-Orange.png'),
+                  name: "Granulado",
+                  price: "30.00",
+                }
               })}
               imageWidth={140}
               imageHeight={110}
@@ -84,13 +92,15 @@ const FoodScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen 
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require('../../../assets/pngs/accesorio-tropical.png'),
-                name: "Granulado",
-                price: "30.00",
+                product: {
+                  sourceImage: require('../../../assets/pngs/accesorio-tropical.png'),
+                  name: "Granulado",
+                  price: "30.00",
+                }
               })}
-              imageWidth={110}
-              imageHeight={110}
-              top={-45}
+              imageWidth={95}
+              imageHeight={95}
+              top={-40}
               sourceImage={require('../../../assets/pngs/accesorio-tropical.png')}
               name={'Granulado tropical'}
               price={'45.00'}
@@ -101,13 +111,15 @@ const FoodScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require('../../../assets/pngs/Food1.png'),
-                name: "Hojuelas",
-                price: "18.00",
+                product: {
+                  sourceImage: require('../../../assets/pngs/Food1.png'),
+                  name: "Hojuelas",
+                  price: "18.00",
+                }
               })}
-              imageWidth={150}
-              imageHeight={150}
-              top={-80}
+              imageWidth={130}
+              imageHeight={130}
+              top={-60}
               sourceImage={require('../../../assets/pngs/Food1.png')}
               name={'Hojuelas'}
               price={'18.00'}
@@ -118,13 +130,15 @@ const FoodScreen = () => {
           <View style={styles.cardContainer}>
             <CardScreen 
               onPress={() => navigation.navigate(ROUTES.PRODUCT, {
-                sourceImage: require('../../../assets/pngs/Food2.png'),
-                name: "Granulado",
-                price: "20.00",
+                product: {
+                  sourceImage: require('../../../assets/pngs/Food2.png'),
+                  name: "Granulado",
+                  price: "20.00",
+                }
               })}
-              imageWidth={140}
-              imageHeight={110}
-              top={-55}
+              imageWidth={90}
+              imageHeight={90}
+              top={-30}
               sourceImage={require('../../../assets/pngs/Food2.png')}
               name={'Granulado'}
               price={'20.00'}

@@ -16,18 +16,6 @@ const Home = () => {
   return (
     <>
       <SafeAreaView style={styles.body}>
-        <View style={styles.navbar}>
-          <View>
-            <Ionicons name="options" size={20} color={COLORS.white} />
-          </View>
-          <View>
-            <Text style={styles.navbarText}>Home</Text>
-          </View>
-          <View>
-            <Ionicons name="search" size={20} color={COLORS.white} />
-          </View>
-        </View>
-
         <View style={styles.containerSubTitle}>
           <Text style={styles.greeting}>¡Hola Aldo!</Text>
           <Text style={styles.subtitle}>Descubre el mundo acuático</Text>
@@ -59,12 +47,10 @@ const Home = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.column2}>
-            <View style={styles.image}>
-              <Image
-                style={{ width: 100, height: 100 }}
-                source={require("../../assets/pngs/welcome-betta.png")}
-              />
-            </View>
+            <Image
+              style={{ width: 100, height: 100 }}
+              source={require("../../assets/pngs/welcome-betta.png")}
+            />
           </View>
         </View>
         <Text style={{ marginLeft: 10, fontFamily: "Poppins-Medium", fontSize: 18, color: COLORS.white }}>
@@ -83,17 +69,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.background,
     paddingHorizontal: 25,
-  },
-  navbar: {
-    height: 60,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  navbarText: {
-    color: COLORS.white,
-    fontSize: 17,
-    fontFamily: "Poppins-Medium",
   },
   containerSubTitle: {
     marginTop: 10,
@@ -152,8 +127,6 @@ const styles = StyleSheet.create({
   column2: {
     width: 50,
     height: 50,
-    borderRadius: 25,
-    backgroundColor: COLORS.primary,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -183,12 +156,5 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     alignSelf: "center",
   },
-  image: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: COLORS.secondary,
-    justifyContent: "center",
-    alignItems: "center",
-  },
+
 });

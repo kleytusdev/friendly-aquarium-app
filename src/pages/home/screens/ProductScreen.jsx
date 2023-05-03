@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, ROUTES } from "../../../constants";
 // Svgs
@@ -7,12 +7,17 @@ import { Ionicons } from "@expo/vector-icons";
 import IconStar from "../../../assets/svgs/star.svg"
 import IconLike from "../../../assets/svgs/like.svg"
 import IconInfo from "../../../assets/svgs/info.svg"
-import IconCart from "../../../assets/svgs/shopping-cart.svg"
 import { useNavigation } from '@react-navigation/native';
+import { CartContext } from './CartContext';
+import CartIcon from "./CartIcon";
 
 const ProductScreen = ({ route }) => {
-  const { name, price, sourceImage } = route.params;
+
+  const { name, price, sourceImage } = route.params.product;
+  
   const navigation = useNavigation();
+
+  const { addToCart } = useContext(CartContext);
 
   return (
     <>
@@ -25,7 +30,7 @@ const ProductScreen = ({ route }) => {
             <Text style={styles.navbarText}>Producto</Text>
           </View>
           <View>
-            <IconCart fill={COLORS.white} width={30} height={30} />
+            <CartIcon />
           </View>
         </View>
         <View style={styles.photoContainer}>
@@ -49,12 +54,12 @@ const ProductScreen = ({ route }) => {
               </View>
             </View>
             <View style={styles.row}>
-            <View style={{ flex: 1, flexDirection: 'row', gap: 10 }}>
+              <View style={{ flex: 1, flexDirection: 'row', gap: 10 }}>
                 <IconLike color={COLORS.secondary} width={20} height={20}/>
                 <Text style={styles.statsText}>88%</Text>
               </View>
               <View style={{ flex: 4.7, flexDirection: 'row' }}>
-              <Text style={styles.statsInfoText} >140 recomiendan este producto</Text>
+                <Text style={styles.statsInfoText} >140 recomiendan este producto</Text>
               </View>
             </View>
             <View style={styles.descriptionContainer}>
@@ -80,7 +85,7 @@ const ProductScreen = ({ route }) => {
                 <Text style={styles.price}>S/ {price}</Text>
                 <Text style={styles.delivery}>Entrega 2-4 días</Text>
               </View>
-              <TouchableOpacity style={styles.button}>
+              <TouchableOpacity style={styles.button} onPress={() => addToCart(sourceImage, name, price)}>
                 <Text style={styles.buttonText}>
                   Agregar al carro
                 </Text>
