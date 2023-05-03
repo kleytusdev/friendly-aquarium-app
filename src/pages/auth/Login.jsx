@@ -3,7 +3,6 @@ import {
   Image,
   StyleSheet,
   Text,
-  TextInput,
   Pressable,
   View,
   Alert
@@ -11,15 +10,16 @@ import {
 import Facebook from "../../assets/img/facebook.png";
 import Google from "../../assets/img/google.png";
 import { useNavigation } from '@react-navigation/native';
-import { ROUTES, COLORS } from "../../constants";
+import { COLORS } from "../../constants";
 import Button from "./components/Button";
 import Input from "./components/Input";
 import firebaseConfig from "./../../../firebase-config";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { initializeApp } from 'firebase/app';
 import IconBettaGradient from '../../assets/svgs/betta-fish-gradient.svg'
 
 const Login = () => {
+
   const navigation = useNavigation();
 
   const [email, setEmail] = useState('')
@@ -30,6 +30,7 @@ const Login = () => {
 
   console.log({ email, password })
   
+
   const handleSignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -50,7 +51,7 @@ const Login = () => {
       <Text style={styles.title}>Iniciar Sesión</Text>
       <View style={styles.inputContainer}>
         <Input onChangeText={(text) => setEmail(text)} placeholder={'E-mail'} />
-        <Input onChangeText={(text) => setPassword(text)} placeholder={'Contraseña'} />
+        <Input secureTextEntry={true} onChangeText={(text) => setPassword(text)} placeholder={'Contraseña'} />
       </View>
       
       <Button
@@ -58,7 +59,6 @@ const Login = () => {
         backgroundColor={COLORS.jetBlack}
         textColor={COLORS.white}
         onPress={handleSignIn}
-        // onPress={() => navigation.navigate('Home')}
       />
       <Button
         name="Regístrate"

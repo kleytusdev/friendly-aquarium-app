@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { COLORS } from "../../../constants";
 
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";

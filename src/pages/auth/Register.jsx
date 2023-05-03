@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,41 +9,38 @@ import { COLORS } from "../../constants";
 import Button from "./components/Button";
 import Input from "./components/Input";
 import firebaseConfig from "./../../../firebase-config";
+import { useNavigation } from '@react-navigation/native';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { initializeApp } from 'firebase/app';
 import IconBettaGradient from '../../assets/svgs/betta-fish-gradient.svg'
-import { getFirestore, doc } from "firebase/firestore";
 import * as yup from 'yup';
 import { Formik } from 'formik';
-import { useIsFocused } from '@react-navigation/native';
 
 const Register = () => {
+
+  const navigation = useNavigation();
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  const handleCreateAccount = async (values) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        values.email,
-        values.password
-      );
-      const user = userCredential.user;
-      const db = getFirestore(app);
+  console.log({ email, password })
 
-      // Agrega los datos adicionales del usuario a Firestore
-      await doc(db, 'users', user.uid).set({
-        name: values.name,
-        age: values.age,
-      });
+  const handleCreateAccount = () => {
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
       console.log('Cuenta creada');
+      const user = userCredential.user;
       console.log(user);
-    } catch (error) {
+      navigation.navigate('Home')
+    })
+    .catch(error => {
       console.log(error);
-      Alert.alert('Campos incorrectos');
-    }
-  };
+      Alert.alert(error.message)
+    })
+  }
 
   return (
     <View style={styles.container}>
@@ -67,20 +64,19 @@ const Register = () => {
         {({ handleChange, handleBlur, values, errors }) => (
           <View style={styles.inputContainer}>
             <Input
-              onChangeText={handleChange('email')}
+              onChangeText={(text) => setEmail(text)}
               onBlur={handleBlur('email')}
               placeholder={'E-mail'}
               value={values.email}
             />
-            {errors.email && <Text style={{ color: 'red' }}>{errors.email}</Text>}
 
             <Input
-              onChangeText={handleChange('password')}
+              onChangeText={(text) => setPassword(text)}
               onBlur={handleBlur('password')}
               placeholder={'Contraseña'}
               value={values.password}
+              secureTextEntry={true}
             />
-            {errors.password && <Text style={{ color: 'red' }}>{errors.password}</Text>}
 
             <Input
               onChangeText={handleChange('name')}

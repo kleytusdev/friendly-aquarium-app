@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants";
 import CardNotification from "./components/CardNotification";
 import MiniStat from "./components/MiniStat";

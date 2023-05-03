@@ -5,7 +5,6 @@
     "ios": {
       "supportsTablet": true
     },
-  
     "android": {
       "package": "com.kleytus.FriendlyAquarium",
       "adaptiveIcon": {
@@ -13,7 +12,6 @@
         "backgroundColor": "#ffffff"
       }
     },
-
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +25,11 @@
     ],
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "09dfb3ae-c141-455f-b785-3b60b7ac1f8b"
+      }
     }
   }
 }

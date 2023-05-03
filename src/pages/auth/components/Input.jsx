@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { COLORS } from "../../../constants";
 
-const Input = ({ placeholder, onChangeText }) => {
+const Input = ({ placeholder, onChangeText, secureTextEntry }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
@@ -28,6 +28,7 @@ const Input = ({ placeholder, onChangeText }) => {
         onFocus={handleFocus}
         onBlur={handleBlur}
         selectionColor={COLORS.white}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );
