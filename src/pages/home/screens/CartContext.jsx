@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
     });
     if (!found) {
       updatedProducts.push({
-        id: Date.now(), // añade una id única para cada producto
+        id: Date.now(), // Añade una id única para cada producto
         name: productName,
         quantity: 1,
         totalPrice: parseFloat(productPrice),
@@ -45,9 +45,14 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const clearCart = () => {
+    setCount(0);
+    setProducts([]);
+  };
+
   return (
-    <CartContext.Provider value={{ count, products, addToCart, removeFromCart }}>
-      {children}
+    <CartContext.Provider value={{ count, products, addToCart, removeFromCart, clearCart }}>
+    {children}
     </CartContext.Provider>
   );
 };

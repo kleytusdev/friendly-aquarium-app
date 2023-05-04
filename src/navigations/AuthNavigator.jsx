@@ -5,6 +5,7 @@ import Register from '../pages/auth/Register';
 import Welcome from '../pages/start/Welcome';
 import ProductScreen from '../pages/home/screens/ProductScreen';
 import ProductsQueue from '../pages/home/screens/ProductsQueue';
+import PurcharseScreen from '../pages/home/screens/PurcharseScreen'
 import { ROUTES, COLORS } from '../constants';
 import BottomTabNavigator from './BottomTabNavigator';
 
@@ -32,6 +33,7 @@ export default function AuthNavigator() {
       <Stack.Screen name={ROUTES.REGISTER} component={Register} />
       <Stack.Screen options={{headerShown: false}} name={ROUTES.PRODUCT} component={ProductScreen} />
       <Stack.Screen options={{ headerTitle: 'Carrito de compras' }} name={ROUTES.PRODUCTQUEUE} component={ProductsQueue} />
+      <Stack.Screen options={{ headerTitle: 'Resumen de pedido' }} name={ROUTES.PURCHARSE} component={PurcharseScreen} />
       <Stack.Screen options={{headerShown: false}} name={ROUTES.WELCOME} component={Welcome} />
       <Stack.Screen options={{headerShown: false}} name={ROUTES.HOME} component={BottomTabNavigator} />
     </Stack.Navigator>

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { COLORS } from "../../../constants";
 import IconShoppingCart from "../../../assets/svgs/shopping-cart.svg";
 import MiniStat from "../../profile/components/MiniStat";
+import { Ionicons } from '@expo/vector-icons';
 
 const CardPurchaseStatus = ({ image, product, date, price, status, onPressPurchase }) => {
 
@@ -30,7 +31,7 @@ const CardPurchaseStatus = ({ image, product, date, price, status, onPressPurcha
         <TouchableOpacity 
           onPress={onPressPurchase}
           style={styles.statusContainer}>
-          <IconShoppingCart fill="#fff" width={40} height={40} />
+          <Ionicons name='information-circle' color={COLORS.gray} size={30} />
         </TouchableOpacity>
       </View>
     </>

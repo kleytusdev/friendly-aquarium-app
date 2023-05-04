@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { CartContext } from "./CartContext";
 import { COLORS } from "../../../constants";
-import IconCircle from "../../../assets/svgs/circle.svg"
 
 const CartCounter = () => {
   const { products, removeFromCart } = useContext(CartContext);

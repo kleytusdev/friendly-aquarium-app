@@ -5,6 +5,7 @@ export default {
     REGISTER: 'Register',
     PRODUCT: 'Product',
     PRODUCTQUEUE: 'ProductQueue',
+    PURCHARSE: 'Purcharse',
 
     HOME: 'Home',
     FAVORITE: 'Favorite',
