@@ -5,13 +5,13 @@
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCDIoiCjDJlBx2TWGkj51xk64ODeBOK0es",
-  authDomain: "friendly-aquarium.firebaseapp.com",
-  projectId: "friendly-aquarium",
-  storageBucket: "friendly-aquarium.appspot.com",
-  messagingSenderId: "959699262076",
-  appId: "1:959699262076:web:1755fd3c4cdf6fc0e287f9",
-  measurementId: "G-1V1LVCZLWN"
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-export default firebaseConfig
+export default firebaseConfig;
